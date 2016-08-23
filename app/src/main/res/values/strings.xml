@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Fun Facts</string>
+    <string-array name="FactBook">
+        <item>Ants stretch when they wake up in the morning.</item>
+        <item>Ostriches can run faster than horses.</item>
+        <item>Olympic gold medals are actually made mostly of silver.</item>
+        <item>You are born with 300 bones; by the time you are an adult you will have 206.</item>
+        <item>It takes about 8 minutes for light from the Sun to reach Earth.</item>
+        <item>Some bamboo plants can grow almost a meter in just one day.</item>
+        <item>The state of Florida is bigger than England.</item>
+        <item>On average, it takes 66 days to form a new habit.</item>
+        <item>Mammoths still walked the earth when the Great Pyramid was being built.</item>
+        <item></item>
+    </string-array>
 </resources>

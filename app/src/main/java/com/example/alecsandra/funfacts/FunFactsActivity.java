@@ -33,6 +33,9 @@ public class FunFactsActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                String[] factBook = getResources().getStringArray(R.array.FactBook);
+                mFactBook.setFact(factBook);
                 String fact = mFactBook.getFact();
 
                 TypedArray colors = getResources().obtainTypedArray(R.array.colorWheel);
