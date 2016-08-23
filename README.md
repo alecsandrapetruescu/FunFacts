@@ -1,1 +1,1 @@
-FunFacts Android App via TeamTreehouse tutorials
+FunFacts Android App via Team Treehouse tutorials
