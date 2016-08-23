@@ -1,5 +1,6 @@
 package com.example.alecsandra.funfacts;
 
+import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,6 +34,9 @@ public class FunFactsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String fact = mFactBook.getFact();
+
+                TypedArray colors = getResources().obtainTypedArray(R.array.colorWheel);
+                mColorWheel.setColor(colors);
                 int color = mColorWheel.getColor();
 
                 // Update the screen with our dynamic fact

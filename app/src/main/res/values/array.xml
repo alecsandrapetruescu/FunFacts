@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="colorWheel">
+        <item>@color/colorWheel_aqua</item>
+        <item>@color/colorWheel_darkblue</item>
+        <item>@color/colorWheel_darkgray</item>
+        <item>@color/colorWheel_green</item>
+        <item>@color/colorWheel_lavender</item>
+        <item>@color/colorWheel_lightblue</item>
+        <item>@color/colorWheel_lightgray</item>
+        <item>@color/colorWheel_mauve</item>
+        <item>@color/colorWheel_mustard</item>
+        <item>@color/colorWheel_orange</item>
+        <item>@color/colorWheel_pink</item>
+        <item>@color/colorWheel_purple</item>
+        <item>@color/colorWheel_red</item>
+    </array>
+</resources>
