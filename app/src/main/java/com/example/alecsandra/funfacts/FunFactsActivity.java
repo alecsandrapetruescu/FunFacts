@@ -42,8 +42,7 @@ public class FunFactsActivity extends AppCompatActivity {
             }
         };
         mShowFactButton.setOnClickListener(listener);
-
-
+        // Toast provides information in a small popup
         Toast.makeText(FunFactsActivity.this,"Yey random facts",Toast.LENGTH_LONG).show();
         Log.d(TAG, "We are loggin form the onCreate() method");
 
