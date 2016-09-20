@@ -1,6 +1,7 @@
 package com.example.alecsandra.funfacts;
 
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,12 +14,46 @@ import android.widget.Toast;
 public class FunFactsActivity extends AppCompatActivity {
 
     public static final String TAG = FunFactsActivity.class.getSimpleName();
+    private static final String KEY_FACT = "KEY_FACT";
+    private static final String KEY_COLOR = "KEY_COLOR";
     private FactBook mFactBook = new FactBook();
     private ColorWheel mColorWheel = new ColorWheel();
     // Declare our View variables
     private TextView mFactTextView;
     private Button mShowFactButton;
     private RelativeLayout mRelativeLayout;
+    private String mFact; // = "Ants stretch when they wake up in the morning.";
+    private int mColor;// = Color.parseColor("#3F51B5");
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        if (mFact == null){
+            mFact = FactBook.getFirstFact(getResources().getStringArray(R.array.FactBook));
+        }
+
+        if (mColor == 0){
+            mColor = ColorWheel.getFirstColor(getResources().obtainTypedArray(R.array.colorWheel));
+        }
+
+        outState.putString(KEY_FACT, mFact);
+        outState.putInt(KEY_COLOR, mColor);
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        mFact = savedInstanceState.getString(KEY_FACT);
+        mColor = savedInstanceState.getInt(KEY_COLOR);
+
+        // Update the screen with our dynamic fact
+        mFactTextView.setText(mFact);
+        mRelativeLayout.setBackgroundColor(mColor);
+        mShowFactButton.setTextColor(mColor);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,16 +71,16 @@ public class FunFactsActivity extends AppCompatActivity {
 
                 String[] factBook = getResources().getStringArray(R.array.FactBook);
                 mFactBook.setFact(factBook);
-                String fact = mFactBook.getFact();
+                mFact = mFactBook.getFact();
 
                 TypedArray colors = getResources().obtainTypedArray(R.array.colorWheel);
                 mColorWheel.setColor(colors);
-                int color = mColorWheel.getColor();
+                mColor = mColorWheel.getColor();
 
                 // Update the screen with our dynamic fact
-                mFactTextView.setText(fact);
-                mRelativeLayout.setBackgroundColor(color);
-                mShowFactButton.setTextColor(color);
+                mFactTextView.setText(mFact);
+                mRelativeLayout.setBackgroundColor(mColor);
+                mShowFactButton.setTextColor(mColor);
             }
         };
         mShowFactButton.setOnClickListener(listener);

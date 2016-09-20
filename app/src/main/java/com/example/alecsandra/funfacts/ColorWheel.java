@@ -20,4 +20,8 @@ public class ColorWheel {
     public int getColor(){
         return mColor;
     }
+
+    public static int getFirstColor(TypedArray colors) {
+        return  colors.getColor(3, 0);
+    }
 }
